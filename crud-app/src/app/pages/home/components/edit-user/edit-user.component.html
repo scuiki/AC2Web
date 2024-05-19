@@ -1,0 +1,65 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 vh-100">
+      <div class="row d-flex justify-content-center align-items-center vh-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Edit User</h2>
+                <p class="text-white-50 mb-5">Edit the details of the user</p>
+  
+                <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+  
+                  <div class="form-outline form-white mb-4">
+                    <input type="text" id="typeNameX" class="form-control form-control-lg" formControlName="name"/>
+                    <label class="form-label" for="typeNameX">Name</label>
+                    <div *ngIf="userForm.get('name')?.invalid && (userForm.get('name')?.dirty || userForm.get('name')?.touched)">
+                      <div class="text-danger">Name is required</div>
+                    </div>
+                  </div>
+  
+                  <div class="form-outline form-white mb-4">
+                    <input type="email" id="typeEmailX" class="form-control form-control-lg" formControlName="email"/>
+                    <label class="form-label" for="typeEmailX">Email</label>
+                    <div *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)">
+                      <div class="text-danger">Valid email is required</div>
+                    </div>
+                  </div>
+  
+                  <div class="form-outline form-white mb-4">
+                    <select id="typeRoleX" class="form-control form-control-lg" formControlName="role">
+                      <option value="">Select Role</option>
+                      <option value="FE">Engenheiro de FE</option>
+                      <option value="BE">Engenheiro de BE</option>
+                      <option value="Data Analyst">Analista de dados</option>
+                      <option value="Technical Lead">Líder Técnico</option>
+                    </select>
+                    <label class="form-label" for="typeRoleX">Role</label>
+                    <div *ngIf="userForm.get('role')?.invalid && (userForm.get('role')?.dirty || userForm.get('role')?.touched)">
+                      <div class="text-danger">Role is required</div>
+                    </div>
+                  </div>
+  
+                  <div class="form-outline form-white mb-4">
+                    <input type="password" id="typePasswordX" class="form-control form-control-lg" formControlName="password"/>
+                    <label class="form-label" for="typePasswordX">Password</label>
+                    <div *ngIf="userForm.get('password')?.invalid && (userForm.get('password')?.dirty || userForm.get('password')?.touched)">
+                      <div class="text-danger">Password must be between 6 and 15 characters</div>
+                    </div>
+                  </div>
+  
+                  <button type="submit" class="btn btn-outline-light btn-lg px-5" [disabled]="!userForm.valid">Save</button>
+  
+                </form>
+  
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
