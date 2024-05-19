@@ -6,6 +6,9 @@ import { UsersComponent } from './pages/home/components/users/users.component';
 import { WelcomeComponent } from './pages/home/components/welcome/welcome.component';
 import { TodoListComponent } from './pages/home/pages/todo-list/todo-list.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { AddUserComponent } from './pages/home/components/add-user/add-user.component';
+import { EditUserComponent } from './pages/home/components/edit-user/edit-user.component';
+import { HomepageComponent } from './pages/home/components/homepage/homepage.component';
 
 const routes: Routes = [
   {path: "", redirectTo: "/login", pathMatch: 'full'},
@@ -15,8 +18,11 @@ const routes: Routes = [
     path: "app", component: HomeComponent,
     children: [
       {path: "", component: WelcomeComponent},
+      {path: "homepage", component: HomepageComponent},
       {path: "users", component: UsersComponent},
-      {path: "todo-list", component: TodoListComponent}
+      {path: "todo-list", component: TodoListComponent},
+      {path: "add-user", component: AddUserComponent},
+      {path: "edit-user", component: EditUserComponent}
     ]
   }
 ]

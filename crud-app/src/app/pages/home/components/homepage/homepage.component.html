@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <h2>Home</h2>
+  
+    <!-- Seção com informações resumidas dos usuários -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="card text-white bg-primary mb-3">
+          <div class="card-body">
+            <h5 class="card-title">Total de Usuários</h5>
+            <p class="card-text">{{ totalUsers }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Tabela com a quantidade de usuários por funções -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Quantidade de Usuários por Função</h5>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Função</th>
+                  <th>Quantidade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let role of userRoles">
+                  <td>{{ role.name }}</td>
+                  <td>{{ role.count }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
